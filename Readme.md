@@ -185,5 +185,29 @@ fs.writeFile('./assets/random_read_chapter_2.txt', chapter_2.trim(), err => {
 
 ```
 
-Examples at (5_write_files.js)[5_write_files.js]
+Examples at [5_write_files.js](./5_write_files.js)
 
+**To make directories**
+
+We use `fs.mkdir("directory-name", err =>{})`
+
+To check if file exists: `fs.existsSync("directory-name")`
+
+```
+
+if (fs.existsSync("storage")) {
+    console.log("Directory Exists already.")
+} else {
+    fs.mkdir("storage", err => {
+        if (err) {
+            throw err;
+            process.exit();
+        };
+        console.log("Done: Created Directory");
+    })
+}
+
+```
+
+
+Examples at [5_mkdir.js](./5_mkdir.js)
