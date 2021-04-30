@@ -16,7 +16,6 @@ console.log(text);
 fs.readFile("./assets/reandom_read.txt", "utf8", (err, text) => {
     if (err) {
         throw err;
-        process.exit();
     };
     console.log(text);
 });
@@ -28,7 +27,6 @@ fs.readFile("./assets/reandom_read.txt", "utf8", (err, text) => {
 fs.readFile("./assets/random_img.jpg", (err, text) => {
     if (err) {
         throw err;
-        process.exit();
     };
     console.log(text);
 });
