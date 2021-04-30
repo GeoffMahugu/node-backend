@@ -32,3 +32,8 @@ console.log(`FirstName: ${firstName} and LastName ${lastName}`);
 and on the terminal run:
 
 ``node index --firstName MyFirstName --lastName MyLastName``
+
+
+#### Process.stdin & Process.stdout
+These are used to read user input and output results from the programm.
+ 
