@@ -166,3 +166,25 @@ fs.readFile("./assets/random_img.jpg", (err, text) => {
 });
 
 ```
+Examples at (5_read_files.js)[5_read_files.js]
+
+
+**To write files**
+
+We use `fs.writeFile('file_name', text, err =>{}) `
+
+```
+
+fs.writeFile('./assets/random_read_chapter_2.txt', chapter_2.trim(), err => {
+    if (err) {
+        throw err;
+        process.exit();
+    };
+    console.log("Done: Chapter 2 Write.");
+});
+
+```
+
+
+Examples at (5_write_files.js)[5_write_files.js]
+
