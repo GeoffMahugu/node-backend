@@ -72,3 +72,67 @@ rl.question("What\'s your favourite 🍦 flavour?", answer => {
 ```
 
 Examples at (4_readlines.js)[4_readlines.js]
+
+
+### Modules Export
+Functions and Classes can be accessed in other files and reused using `modules.export`
+
+``
+let counter = 0;
+const inc = () => ++counter;
+
+module.exports = {inc}
+``
+
+To import module:
+
+``const { inc } = require('./func_file');``
+
+Examples at (4_module_func.js)[4_module_func.js]
+
+
+### EventEmitter
+Event Emitters are asynchronous and fired on receipt of the event trigger.
+
+```
+const { EventEmitter } = require("events");
+const emitter = new EventEmitter();
+
+emitter.on("customEvent", (p1, p2) => {
+    console.log(`Param_1: ${p1}  => Param_2: ${p2}\n`);
+});
+
+emitter.emit("customEvent", "NAME", "My User Name");
+
+```
+
+Examples at (4_event_emitter.js)[4_event_emitter.js]
+
+## Fs module
+The `fs` module is used to:
+
+ - Read files & Directories.
+ - Create Files and Directories.
+ - Watch files & directories.
+ - Modify file permisions.
+
+
+```
+const fs = require("fs");
+
+const files = fs.readdirSync("./");
+```
+
+The above code is blocking. Reading the files in the directory is Synchronous and has to be completed before executing next code.
+
+While the async code uses `fs.readdir("directory", (error,files))`
+
+```
+fs.readdir("./", (err, files) => {
+    console.log("Async File read start.");
+    console.log(files);
+});
+
+```
+
+Examples at (5_list_files.js)[5_list_files.js]
