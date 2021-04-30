@@ -185,6 +185,5 @@ fs.writeFile('./assets/random_read_chapter_2.txt', chapter_2.trim(), err => {
 
 ```
 
-
 Examples at (5_write_files.js)[5_write_files.js]
 
