@@ -108,7 +108,8 @@ emitter.emit("customEvent", "NAME", "My User Name");
 
 Examples at (4_event_emitter.js)[4_event_emitter.js]
 
-## Fs module
+#### File Stystem (Fs) module
+
 The `fs` module is used to:
 
  - Read files & Directories.
@@ -116,6 +117,7 @@ The `fs` module is used to:
  - Watch files & directories.
  - Modify file permisions.
 
+**To read directories:**
 
 ```
 const fs = require("fs");
@@ -125,7 +127,7 @@ const files = fs.readdirSync("./");
 
 The above code is blocking. Reading the files in the directory is Synchronous and has to be completed before executing next code.
 
-While the async code uses `fs.readdir("directory", (error,files))`
+While the async code uses `fs.readdir("directory", (error,files)={})`
 
 ```
 fs.readdir("./", (err, files) => {
@@ -136,3 +138,31 @@ fs.readdir("./", (err, files) => {
 ```
 
 Examples at (5_list_files.js)[5_list_files.js]
+
+
+**To read files:**
+
+Synchronous/Blocking: We use `fs.readFileSync("file_path", "encoding")`
+
+`const text = fs.readFileSync("./assets/reandom_read.txt", "utf8")`
+
+We use `fs.readFile("file_path","encoding",(error,text)={})` 
+
+```
+
+fs.readFile("./assets/reandom_read.txt", "utf8", (err, text) => {
+    if (err) throw err;
+    console.log(text);
+});
+
+```
+
+To read **Binary Files** remove the encoding `fs.readFile("file_path", (error,text)={})`:
+
+```
+fs.readFile("./assets/random_img.jpg", (err, text) => {
+    if (err) throw err;
+    console.log(text);
+});
+
+```
