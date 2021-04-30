@@ -1,0 +1,24 @@
+{
+  "name": "node-backend",
+  "version": "1.0.0",
+  "description": "This is a node backend application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/GeoffMahugu/node-backend.git"
+  },
+  "keywords": [
+    "node.js",
+    "express.js",
+    "javascript"
+  ],
+  "author": "GeoffMahugu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeoffMahugu/node-backend/issues"
+  },
+  "homepage": "https://github.com/GeoffMahugu/node-backend#readme"
+}
